@@ -41,4 +41,4 @@ const favouriteReducer = (state = initialState, action) => {
     }
 };
 
-export default favouriteReducer;
+export default favouriteReducer; 
