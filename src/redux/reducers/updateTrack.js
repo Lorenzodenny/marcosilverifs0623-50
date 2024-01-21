@@ -1,23 +1,16 @@
-import {UPDATE_TRACK} from '../actions'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import favouriteReducer from '../reducers/myplaylist'
+import songsReducer from '../reducers/songs'
+import updateTrackReducer from '../reducers/updateTrack'
 
-const initialState = {
-    song:{},
-};
+const bigReducer = combineReducers({
+  favourite: favouriteReducer,
+  songs: songsReducer,
+  track: updateTrackReducer
+})
 
+const store = configureStore({
+  reducer: bigReducer,
+})
 
-const updateTrackReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case UPDATE_TRACK:
-        return {
-          ...state,
-          song: {
-            ...state.song,
-            track: action.payload,
-          },
-        };
-      default:
-        return state;
-    }
-  };
-
-  export default updateTrackReducer
+export default store

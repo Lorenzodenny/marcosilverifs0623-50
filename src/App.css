@@ -247,3 +247,14 @@ ul {
   margin-bottom: 200px;
 }
 
+.immagine {
+margin-top: 30%;
+  margin-left: 60%; 
+}
+
+.NotFound {
+  white-space: nowrap;
+  margin-left: 50%;
+  font-size: 79px;
+  color: red;
+}
